@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Jogadores</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero hero-compacto">
+      <div>
+        <p class="hero-tag">Gerencie os participantes</p>
+        <h1>📝 Cadastro de Jogadores</h1>
+      </div>
+      <nav class="menu-topo">
+        <a class="link-historico" href="/">Jogo</a>
+        <a class="link-historico ativo" href="/cadastro.html">Cadastro</a>
+        <a class="link-historico" href="/historico.html">Histórico</a>
+        <a class="link-historico" href="/estatisticas.html">Estatísticas</a>
+      </nav>
+    </header>
+
+    <div class="grid-duplo">
+      <div class="card-formulario">
+        <h2 id="tituloFormulario">Novo jogador</h2>
+        <input type="hidden" id="jogadorId">
+
+        <label for="nomeJogador">Nome do jogador</label>
+        <input type="text" id="nomeJogador" placeholder="Digite o nome">
+
+        <label for="cursoJogador">Curso</label>
+        <select id="cursoJogador"></select>
+
+        <label for="turnoJogador">Turno</label>
+        <select id="turnoJogador"></select>
+
+        <div class="acoes-formulario">
+          <button class="botao-jogar" id="btnSalvar">Salvar jogador</button>
+          <button class="botao-secundario" id="btnCancelar" type="button">Cancelar edição</button>
+        </div>
+        <p id="mensagemCadastro"></p>
+      </div>
+
+      <div class="card-formulario card-ajuda">
+        <h2>Melhorias aplicadas</h2>
+        <p>Cadastro com edição rápida, feedback visual e proteção no backend.</p>
+        <p>Os nomes são exibidos com segurança no frontend, evitando injeção de HTML ao renderizar a tabela.</p>
+        <p>O servidor também bloqueia exclusão de quem já possui partidas registradas.</p>
+      </div>
+    </div>
+
+    <div class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Curso</th>
+            <th>Turno</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpoJogadores"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="scripts/cadastro.js"></script>
+</body>
+</html>

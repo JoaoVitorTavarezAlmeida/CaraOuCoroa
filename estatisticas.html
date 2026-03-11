@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatísticas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero hero-compacto">
+      <div>
+        <p class="hero-tag">Painel analítico</p>
+        <h1>📊 Estatísticas</h1>
+      </div>
+      <nav class="menu-topo">
+        <a class="link-historico" href="/">Jogo</a>
+        <a class="link-historico" href="/cadastro.html">Cadastro</a>
+        <a class="link-historico" href="/historico.html">Histórico</a>
+        <a class="link-historico ativo" href="/estatisticas.html">Estatísticas</a>
+      </nav>
+    </header>
+
+    <div class="cards-estatisticas">
+      <div class="card-estatistica"><span>Total de jogos</span><strong id="totalJogos">0</strong></div>
+      <div class="card-estatistica"><span>Quantidade de cara</span><strong id="totalCara">0</strong></div>
+      <div class="card-estatistica"><span>Quantidade de coroa</span><strong id="totalCoroa">0</strong></div>
+      <div class="card-estatistica"><span>% de cara</span><strong id="percentualCara">0%</strong></div>
+      <div class="card-estatistica"><span>% de coroa</span><strong id="percentualCoroa">0%</strong></div>
+      <div class="card-estatistica"><span>Quem mais jogou</span><strong id="quemMaisJogou">-</strong></div>
+      <div class="card-estatistica"><span>Turno que mais jogou</span><strong id="turnoMaisJogou">-</strong></div>
+      <div class="card-estatistica"><span>Curso que mais jogou</span><strong id="cursoMaisJogou">-</strong></div>
+      <div class="card-estatistica"><span>Campeão do dia</span><strong id="campeaoDoDia">-</strong></div>
+    </div>
+
+    <div class="duas-tabelas graficos-grid">
+      <div class="card-formulario card-grafico">
+        <h2>Cara vs Coroa</h2>
+        <canvas id="graficoMoeda"></canvas>
+      </div>
+      <div class="card-formulario card-grafico">
+        <h2>Vitórias por jogador</h2>
+        <canvas id="graficoVitorias"></canvas>
+      </div>
+    </div>
+
+    <div class="duas-tabelas">
+      <div class="tabela-container">
+        <h2>Ranking por partidas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Jogador</th>
+              <th>Curso</th>
+              <th>Turno</th>
+              <th>Partidas</th>
+            </tr>
+          </thead>
+          <tbody id="rankingJogadores"></tbody>
+        </table>
+      </div>
+
+      <div class="tabela-container">
+        <h2>Ranking por vitórias</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Jogador</th>
+              <th>Curso</th>
+              <th>Turno</th>
+              <th>Vitórias</th>
+            </tr>
+          </thead>
+          <tbody id="rankingVitorias"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts/estatisticas.js"></script>
+</body>
+</html>

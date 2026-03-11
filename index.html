@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara ou Coroa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div>
+        <p class="hero-tag">Sistema web com histórico e analytics</p>
+        <h1>🪙 Cara ou Coroa</h1>
+        <p class="subtitulo">Cadastre os jogadores, escolha os lados e acompanhe cada partida com histórico e estatísticas.</p>
+      </div>
+      <nav class="menu-topo">
+        <a class="link-historico ativo" href="/">Jogo</a>
+        <a class="link-historico" href="/cadastro.html">Cadastro</a>
+        <a class="link-historico" href="/historico.html">Histórico</a>
+        <a class="link-historico" href="/estatisticas.html">Estatísticas</a>
+      </nav>
+    </header>
+
+    <section class="cards-estatisticas resumo-topo" id="painelResumo">
+      <div class="card-estatistica"><span>Jogadores cadastrados</span><strong id="resumoJogadores">0</strong></div>
+      <div class="card-estatistica"><span>Partidas registradas</span><strong id="resumoPartidas">--</strong></div>
+      <div class="card-estatistica"><span>Campeão do dia</span><strong id="resumoCampeao">--</strong></div>
+      <div class="card-estatistica"><span>Quem mais jogou</span><strong id="resumoAtivo">--</strong></div>
+    </section>
+
+    <section class="jogo">
+      <div class="jogador">
+        <h3>Jogador 1</h3>
+        <label for="jogador1">Participante</label>
+        <select id="jogador1"></select>
+        <label for="escolha1">Escolha</label>
+        <select id="escolha1">
+          <option value="cara">Cara</option>
+          <option value="coroa">Coroa</option>
+        </select>
+        <p class="info-jogador" id="infoJogador1">Selecione um jogador.</p>
+      </div>
+
+      <div class="centro">
+        <div id="moeda3d"></div>
+        <button class="botao-jogar" id="btnJogar">Jogar</button>
+        <p class="texto-menor">É necessário ter pelo menos 2 jogadores cadastrados.</p>
+        <div class="resultado-box">
+          <h2 id="textoResultado"></h2>
+          <p id="textoRodapeResultado" class="texto-menor"></p>
+        </div>
+      </div>
+
+      <div class="jogador">
+        <h3>Jogador 2</h3>
+        <label for="jogador2">Participante</label>
+        <select id="jogador2"></select>
+        <label for="escolha2">Escolha</label>
+        <select id="escolha2">
+          <option value="coroa">Coroa</option>
+          <option value="cara">Cara</option>
+        </select>
+        <p class="info-jogador" id="infoJogador2">Selecione um jogador.</p>
+      </div>
+    </section>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="scripts/script.js"></script>
+</body>
+</html>

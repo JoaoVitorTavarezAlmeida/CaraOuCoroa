@@ -1,0 +1,364 @@
+:root {
+    --bg: #131523;
+    --bg-soft: #1b1f35;
+    --card: #202640;
+    --card-2: #262d4b;
+    --text: #f4f7ff;
+    --muted: #bcc5ec;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(97, 114, 255, 0.22), transparent 28%),
+        linear-gradient(180deg, #101321 0%, #151935 100%);
+    color: var(--text);
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 28px 20px 40px;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.hero-compacto {
+    align-items: center;
+}
+
+.hero h1, h2, h3 {
+    margin: 0 0 12px;
+}
+
+.hero-tag {
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    margin: 0 0 14px;
+    font-size: 14px;
+}
+
+.subtitulo, .texto-menor {
+    color: var(--muted);
+}
+
+.menu-topo {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.link-historico,
+.link-voltar {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.link-historico:hover,
+.link-voltar:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.link-historico.ativo {
+    background: rgba(117, 223, 165, 0.16);
+    border-color: rgba(117, 223, 165, 0.35);
+}
+
+.jogo {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 360px) minmax(260px, 1fr);
+    align-items: stretch;
+    gap: 24px;
+}
+
+.jogador,
+.card-formulario,
+.card-estatistica,
+.resultado-box,
+.tabela-container {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.jogador,
+.card-formulario,
+.card-estatistica {
+    padding: 20px;
+}
+
+.jogador {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.jogador input,
+.jogador select,
+.card-formulario input,
+.card-formulario select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(9, 12, 26, 0.55);
+    color: var(--text);
+}
+
+.card-formulario {
+    max-width: 100%;
+    margin: 0 auto 28px;
+    text-align: left;
+}
+
+.grid-duplo,
+.duas-tabelas,
+.graficos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card-ajuda p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.filtros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+}
+
+.botao-jogar,
+.botao-secundario,
+.acao-editar,
+.acao-excluir {
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botao-jogar:hover,
+.botao-secundario:hover,
+.acao-editar:hover,
+.acao-excluir:hover {
+    transform: translateY(-1px);
+}
+
+.botao-jogar {
+    background: #4CAF50;
+    width: 100%;
+}
+
+.botao-secundario,
+.acao-editar {
+    background: #4e68d8;
+}
+
+.acao-excluir {
+    background: #c95050;
+}
+
+.botao-jogar:disabled {
+    background: #6d717e;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.resultado-area {
+    margin-top: 40px;
+}
+
+.resultado-box {
+    width: 100%;
+    padding: 16px;
+    min-height: 92px;
+}
+
+.tabela-container {
+    margin-top: 22px;
+    overflow-x: auto;
+    padding: 0;
+}
+
+.cards-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.resumo-topo {
+    margin-bottom: 26px;
+}
+
+.card-estatistica {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.card-estatistica span {
+    color: var(--muted);
+}
+
+.card-estatistica strong {
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text);
+    background: rgba(8, 12, 24, 0.5);
+}
+
+th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.06);
+    color: #eef2ff;
+}
+
+#mensagemHistorico,
+#mensagemCadastro {
+    margin-top: 20px;
+}
+
+#moeda3d {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: radial-gradient(circle at center, #2f2f48 0%, #1a1a2c 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+#textoResultado {
+    margin: 0 0 8px;
+    min-height: 28px;
+    font-size: 22px;
+}
+
+.info-jogador {
+    color: var(--muted);
+    min-height: 20px;
+}
+
+.mensagem-sucesso {
+    color: #88f3a1;
+}
+
+.mensagem-erro {
+    color: #ff8f8f;
+}
+
+.acoes-formulario,
+.acoes-tabela {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.card-grafico {
+    min-height: 340px;
+}
+
+.card-grafico canvas {
+    width: 100% !important;
+    height: 260px !important;
+}
+
+@media (max-width: 980px) {
+    .hero,
+    .jogo,
+    .grid-duplo,
+    .duas-tabelas,
+    .graficos-grid,
+    .filtros-grid {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .hero {
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 22px 14px 32px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jogo {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #moeda3d {
+        width: 220px;
+        height: 220px;
+    }
+}

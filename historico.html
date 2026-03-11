@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histórico de Jogos</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <header class="hero hero-compacto">
+    <div>
+      <p class="hero-tag">Partidas registradas</p>
+      <h1>📜 Histórico de Jogos</h1>
+    </div>
+    <nav class="menu-topo">
+      <a class="link-historico" href="/">Jogo</a>
+      <a class="link-historico" href="/cadastro.html">Cadastro</a>
+      <a class="link-historico ativo" href="/historico.html">Histórico</a>
+      <a class="link-historico" href="/estatisticas.html">Estatísticas</a>
+    </nav>
+  </header>
+
+  <div class="card-formulario filtros-card">
+    <h2>Filtros</h2>
+    <div class="filtros-grid">
+      <div>
+        <label for="filtroJogador">Jogador</label>
+        <select id="filtroJogador"></select>
+      </div>
+      <div>
+        <label for="filtroCurso">Curso</label>
+        <select id="filtroCurso"></select>
+      </div>
+      <div>
+        <label for="filtroTurno">Turno</label>
+        <select id="filtroTurno"></select>
+      </div>
+    </div>
+    <div class="acoes-formulario">
+      <button class="botao-jogar" id="btnFiltrar">Aplicar filtros</button>
+      <button class="botao-secundario" id="btnLimpar">Limpar</button>
+    </div>
+  </div>
+
+  <div class="tabela-container">
+    <table id="tabelaHistorico">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Data</th>
+          <th>Jogador 1</th>
+          <th>Escolha</th>
+          <th>Curso/Turno</th>
+          <th>Jogador 2</th>
+          <th>Escolha</th>
+          <th>Curso/Turno</th>
+          <th>Resultado</th>
+          <th>Vencedor</th>
+        </tr>
+      </thead>
+      <tbody id="corpoHistorico"></tbody>
+    </table>
+  </div>
+  <p id="mensagemHistorico"></p>
+</div>
+<script src="scripts/historico.js"></script>
+</body>
+</html>
