@@ -64,6 +64,7 @@ cara-ou-coroa/
 ├── index.html
 ├── historico.html
 └── estatisticas.html
+
 ▶️ Como executar o projeto
 1️⃣ Clone o repositório
 git clone https://github.com/JoaoVitorTavarezAlmeida/CaraOuCoroa.git
